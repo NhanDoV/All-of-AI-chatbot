@@ -1,0 +1,32 @@
+{
+    "intents": [ 
+                {
+                    "tag": "greeting", 
+                    "patterns": [
+                                "Hi", "Hi BOT", "hello", "hello BOT", "xin chào", "bonjour", "salut"
+                                "hey", "hey BOT", "hello there", "hi there", "ni hao", "ohayo",
+                                "ê","eh", "ê BOT", "hellu", "hella", "alo", "hallo", "konichiwa"
+                                ],
+                    "response": [
+                        "(VI) xin chào, tôi có thể giúp gì cho bạn\n(EN) Hi, can I help you\n(GE) Hallo, kann ich dir helfen?\n(FR) Salut, puis-je vous aider",
+                        "(VI) chào bạn, bạn cần hỗ trợ điều gì?\n(EN) Hi, what support do you need?\n(GE) Hallo, welche Unterstützung brauchst du?\n(FR) Bonjour, de quel soutien avez-vous besoin?"
+                    ]
+                },
+
+                {
+                    "tag": "goodbye",
+                    "patterns": ["Bye", "Goodbye", "Sayonara", "Tschuss", "Thank for your help", "Thank for your answers", "Tạm biệt"],
+                    "response": [
+                        "(VI) Cám ơn bạn đã sử dụng chúng tôi và vui lòng đánh giá trải nghiệm \n(EN) Thank you for using us and please rate your experience\n(GE) Vielen Dank, dass Sie uns nutzen, und bitte bewerten Sie Ihre Erfahrung \n(FR) Merci de nous utiliser et s’il vous plaît évaluer votre expérience."
+                    ]
+                },
+        
+                {
+                    "tag": "who_created"
+                    "patterns": ["who created you", "ai đã lập trình", "mày là ai", "who are you", "bạn là ai", "Qui êtes vous", "Wer bist du"]
+                    "response": [
+                        "(VI): Tôi là XBot, được phát triển bởi ông Đỗ Văn Nhân \n(EN) I am XBot, developed by Sir Do Van Nhan\n(GE) Ich bin XBot, entwickelt von Sir Do Van Nhan \(FR) Je suis XBot, développé par Sir Do Van Nhan"
+                    ]
+                }
+        ]
+}
