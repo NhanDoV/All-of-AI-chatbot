@@ -15,7 +15,7 @@
 
                 {
                     "tag": "goodbye",
-                    "patterns": ["Bye", "Goodbye", "Sayonara", "Tschuss", "Thank for your help", "Thank for your answers", "Tạm biệt"],
+                    "patterns": ["Bye", "Goodbye", "Sayonara", "Tschuss", "Thank for your help", "bye nha", "Thank for your answers", "Tạm biệt"],
                     "response": [
                         "(VI) Cám ơn bạn đã sử dụng chúng tôi và vui lòng đánh giá trải nghiệm \n(EN) Thank you for using us and please rate your experience\n(GE) Vielen Dank, dass Sie uns nutzen, und bitte bewerten Sie Ihre Erfahrung \n(FR) Merci de nous utiliser et s’il vous plaît évaluer votre expérience."
                     ]
@@ -27,6 +27,26 @@
                     "response": [
                         "(VI): Tôi là XBot, được phát triển bởi ông Đỗ Văn Nhân \n(EN) I am XBot, developed by Sir Do Van Nhan\n(GE) Ich bin XBot, entwickelt von Sir Do Van Nhan \n(FR) Je suis XBot, développé par Sir Do Van Nhan"
                     ]
+                },
+
+                {
+                    "tag": "daytime_today",
+                    "patterns": ["what time is it", "What the date today", "hôm nay ngày nào nhỉ", "giờ là mấy giờ rồi"],
+                    "response": ["Hi"]
+                },
+
+                {
+                    "tag": "working_hour",
+                    "patterns": ["Giờ làm việc ở Fsoft?", "what time do we start at work", "when do we end work", "giờ tan làm ở fsoft"],
+                    "response":[
+                        "(VI): Giờ làm việc ở Fsoft bắt đầu lúc 8:15 và kết thúc lúc 17:00\n From 8:15 to 17:00"
+                    ]
+                },
+
+                {
+                    "tag": "log_off",
+                    "patterns": ["muốn xin nghỉ phép thì làm sao"],
+                    "response": ["Log đơn"]
                 }
         ]
 }
