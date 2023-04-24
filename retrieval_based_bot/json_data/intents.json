@@ -3,7 +3,7 @@
                 {
                     "tag": "greeting", 
                     "patterns": [
-                                "Hi", "Hi BOT", "hello", "hello BOT", "xin chào", "bonjour", "salut"
+                                "Hi", "Hi BOT", "hello", "hello BOT", "xin chào", "bonjour", "salut",
                                 "hey", "hey BOT", "hello there", "hi there", "ni hao", "ohayo",
                                 "ê","eh", "ê BOT", "hellu", "hella", "alo", "hallo", "konichiwa"
                                 ],
@@ -22,10 +22,10 @@
                 },
         
                 {
-                    "tag": "who_created"
-                    "patterns": ["who created you", "ai đã lập trình", "mày là ai", "who are you", "bạn là ai", "Qui êtes vous", "Wer bist du"]
+                    "tag": "who_created",
+                    "patterns": ["who created you", "ai đã lập trình", "mày là ai", "who are you", "bạn là ai", "Qui êtes vous", "Wer bist du"],
                     "response": [
-                        "(VI): Tôi là XBot, được phát triển bởi ông Đỗ Văn Nhân \n(EN) I am XBot, developed by Sir Do Van Nhan\n(GE) Ich bin XBot, entwickelt von Sir Do Van Nhan \(FR) Je suis XBot, développé par Sir Do Van Nhan"
+                        "(VI): Tôi là XBot, được phát triển bởi ông Đỗ Văn Nhân \n(EN) I am XBot, developed by Sir Do Van Nhan\n(GE) Ich bin XBot, entwickelt von Sir Do Van Nhan \n(FR) Je suis XBot, développé par Sir Do Van Nhan"
                     ]
                 }
         ]
