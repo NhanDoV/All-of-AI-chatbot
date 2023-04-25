@@ -122,8 +122,9 @@ while True:
                                 pad_token_id=gpt_model.tokenizer.eos_token_id
                                 )
         res_sentence = res_sentence[0]["generated_text"]
-        final_responses = res_sentence.replace('\n\n','\n').split('\n')[1:] 
+        final_responses = list(set(res_sentence.replace('\n\n','\n').split('\n')[1:]))
+        print(final_responses)
         if len(final_responses) > 0:
-            print(f"[{int(time.time() - t1)} secs] {np.random.choice(final_responses)} \nNếu bạn chưa hài lòng với câu trả lời, xin giải thích rõ ràng hơn vì có thể bot không hiểu hoặc chưa được học!")
+            print(f"[{int(time.time() - t1)} secs] {np.random.choice(final_responses, 1)} \nNếu bạn chưa hài lòng với câu trả lời, xin giải thích rõ ràng hơn vì có thể bot không hiểu hoặc chưa được học!")
         else:
             print(f"[{int(time.time() - t1)} secs] Please use English instead, sorry for this inconvenience!!")
