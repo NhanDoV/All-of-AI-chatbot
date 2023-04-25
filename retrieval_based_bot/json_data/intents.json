@@ -86,6 +86,41 @@
                                  "Để đăng ký bus đi làm từ các quận thì tôi sẽ tham khảo ở đâu?", "cho tôi biết cách truy cập vào bus schedule trên portal ở fsoft"
                                 ],
                     "response": ["(VI): B1. Vào https://portal.fpt-software.com/secure/SSCHome.jspa. \n\t  B2. Chọn tab `Useful Information` rồi chọn `bus schedule`. \n\t  Bạn có thể tìm hiểu các thông tin bạn muốn biết tại đây!"]
-                }
+                },
+        
+                {
+                    "tag": "half check in",
+                    "patterns": ["quẹt thẻ dưới 3 tiếng bị gì", "nếu dữ liệu quẹt thẻ là 3 tiếng", 
+                                 "Dữ liệu quẹt thẻ dưới 3 tiếng ?", "quẹt thẻ 2 tiếng", "quẹt thẻ 1 tiếng", "quẹt thẻ dưới 1 tiếng", "dưới 2 giờ làm việc",
+                                 "thế quẹt thẻ có 2 tiếng thôi thì sao?", "dưới 3 tiếng nhưng đã trên 2 giờ làm việc", "dưới 3 giờ làm việc", "dưới 1 giờ làm việc",
+                                 "dưới 2 tiếng nhưng đã trên 1 giờ làm việc", "dưới 1 tiếng làm việc"
+                                ],
+                    "response": ["Nếu dữ liệu quẹt thẻ dưới 3 tiếng: Tool sẽ tính nghỉ một ngày công (trừ một ngày lương) <br> If you are less than 3 hour in the working area: Unreasonable leave for entire day"]
+                },
+               {
+                    "tag": "full check in",
+                    "patterns": ["quẹt thẻ dưới 6 tiếng bị gì?", "nếu quẹt thẻ dưới 6 tiếng", "nếu quẹt thẻ dưới 6 giờ làm việc", "dưới 6 tiếng làm việc thì sao?",
+                                 "Dữ liệu quẹt thẻ dưới 6 tiếng thì sao?", "nếu quẹt thẻ 5 tiếng", "quẹt thẻ 4 tiếng", "dưới 6 giờ làm việc thì sao?",
+                                 "dưới 6 tiếng nhưng đã trên 5 giờ làm việc", "dưới 5 tiếng nhưng đã trên 4 giờ làm việc", "dưới 5 giờ làm việc", "dưới 4 giờ làm việc",
+                                 "dưới 4 tiếng nhưng đã trên 3 giờ làm việc"
+                                ],
+                    "response": ["Nếu dữ liệu quẹt thẻ dưới 6 tiếng: Tool sẽ tính nghỉ nửa ngày công (mất nửa ngày lương). <br> If you are less than 6 hour in the working area: Unreasonable leave for a half day"]
+                },
+
+                {
+                    "tag": "confirm-check in",
+                    "patterns": ["trên 5 giờ làm việc", "trên 4 giờ làm việc", "trên 3 giờ làm việc", "trên 2 giờ làm việc", "trên 1 tiếng làm việc"],
+                    "response": ["bạn cần nói rõ số giờ (và phút) đã có mặt ở đơn vị / nơi làm việc"]
+                },
+
+                {
+                    "tag": "ok-check-in",
+                    "patterns": ["dưới 7 tiếng nhưng đã trên 6 giờ làm việc", "dưới 8 tiếng nhưng đã trên 7 giờ làm việc", "dưới 9 tiếng nhưng đã trên 8 giờ làm việc",
+                                 "dưới 7 tiếng nhưng đã trên 6 giờ làm việc", "dưới 8 tiếng nhưng đã trên 6 giờ làm việc", "dưới 9 tiếng nhưng đã trên 6 giờ làm việc",
+                                 "trên 6 giờ làm việc", "trên 7 giờ làm việc", "trên 8 giờ làm việc", "đã đủ 6 tiếng làm việc trong khoang" 
+                                ],
+                    "response": ["bạn đã đủ thời gian làm việc của một ngày công. <br> your working-hour data is valid"]
+                }        
+            
         ]
 }
