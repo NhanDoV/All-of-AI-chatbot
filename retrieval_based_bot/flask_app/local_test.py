@@ -1,28 +1,28 @@
-import random
+import random, logging
+import pickle, os, time
+t0 = time.time()
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+
 import tensorflow as tf
+tf.get_logger().setLevel(logging.ERROR)
+print(100*'#')
+from transformers import pipeline
 from tensorflow.keras.optimizers import SGD # from tensorflow.keras.optimizers.legacy import SGD # 
 from pyvi import ViTokenizer, ViPosTagger, ViUtils
 from tensorflow.python.keras.layers import Dense, Dropout # from keras.layers import Dense, Dropout
 from tensorflow.python.keras.models import load_model # from keras.models import load_model
 from tensorflow.python.keras.models import Sequential # from keras.models import Sequential
 import numpy as np
-import pickle, os
 import json, warnings
-import nltk
+import nltk, re
 from nltk.stem import WordNetLemmatizer
-from datetime import date, datetime, time, timedelta
+from datetime import date, datetime, timedelta
 
 warnings.filterwarnings("ignore")
 lemmatizer = WordNetLemmatizer()
-try:
-    nltk.download('omw-1.4')
-    nltk.download("punkt")
-    nltk.download("wordnet")
-except :
-    print("need to check")
 
 current_fpath = os.getcwd()
-print("current file-path: ", current_fpath)
+print("current file-path", current_fpath)
 data_folder = '/'.join(current_fpath.split('/')[:-1]) # r"/workspaces/AI_chatbot_flask"
 print(f"file in this directory: {os.listdir(data_folder)}")
 
@@ -81,16 +81,18 @@ def rounding_text_hour(text):
     else: 
         return text
     
+print(f"XBot has been launched after {int(time.time() - t0)} seconds, thank you for your patience")
+print(f"{100*'*'}\n This is XBot, nice to meet you and please tell me something to talk")
 while True:
     print(100*"=")
-    sentence = input("You: ")
-    print(f"You: {sentence}")
-    sentence = rounding_text_hour(sentence)
+    init_sentence = input("You: ")
+    t1 = time.time()
+    sentence = rounding_text_hour(init_sentence)
     if sentence == "quit":
         break
     p = bow(sentence, words, show_details=False)
     res = model.predict(np.array([p]))[0]
-    ERROR_THRESHOLD = 0.1
+    ERROR_THRESHOLD = 0.6
     results = [[i, r] for i, r in enumerate(res) if r > ERROR_THRESHOLD]
     # sort by strength of probability
     results.sort(key=lambda x: x[1], reverse=True)
@@ -106,11 +108,22 @@ while True:
 
         for i in list_of_intents:
             if i["tag"] == tag:
-                print(f"Tag: {tag}")
+                print(f"Tag: {tag} \n {100*'.'}")
                 result = random.choice(i["response"])
-                print(f"BOT: {result}")
+                print(f"BOT: Hi\n{result}")
                 if i["tag"] == "daytime_today":
-                    today_date = (datetime.now() + timedelta(hours=7)).strftime('%b-%d, %Y \t %H:%M:%S GMT+07')
+                    today_date = (datetime.now()).strftime('%b-%d, %Y \t %H:%M:%S GMT+07')
                     print(f"\tToday is {today_date }")
     else: 
-        print("xin giải thích rõ ràng hơn vì có thể bot không hiểu hoặc chưa được học!")
+        res_sentence = gpt_model(
+                                init_sentence, 
+                                do_sample=True, top_k=3, 
+                                temperature=0.9, max_length=120,
+                                pad_token_id=gpt_model.tokenizer.eos_token_id
+                                )
+        res_sentence = res_sentence[0]["generated_text"]
+        final_responses = res_sentence.replace('\n\n','\n').split('\n')[1:] 
+        if len(final_responses) > 0:
+            print(f"[{int(time.time() - t1)} secs] {np.random.choice(final_responses)} \nNếu bạn chưa hài lòng với câu trả lời, xin giải thích rõ ràng hơn vì có thể bot không hiểu hoặc chưa được học!")
+        else:
+            print(f"[{int(time.time() - t1)} secs] Please use English instead, sorry for this inconvenience!!")
