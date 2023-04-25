@@ -8,8 +8,8 @@
                                 "ê","eh", "ê BOT", "hellu", "hella", "alo", "hallo", "konichiwa"
                                 ],
                     "response": [
-                        "(VI) xin chào, tôi có thể giúp gì cho bạn\n(EN) Hi, can I help you\n(GE) Hallo, kann ich dir helfen?\n(FR) Salut, puis-je vous aider",
-                        "(VI) chào bạn, bạn cần hỗ trợ điều gì?\n(EN) Hi, what support do you need?\n(GE) Hallo, welche Unterstützung brauchst du?\n(FR) Bonjour, de quel soutien avez-vous besoin?"
+                        "(VI): xin chào, tôi có thể giúp gì cho bạn\n(EN): Hi, can I help you\n(GE): Hallo, kann ich dir helfen?\n(FR): Salut, puis-je vous aider",
+                        "(VI): chào bạn, bạn cần hỗ trợ điều gì?\n(EN): Hi, what support do you need?\n(GE): Hallo, welche Unterstützung brauchst du?\n(FR): Bonjour, de quel soutien avez-vous besoin?"
                     ]
                 },
 
@@ -17,7 +17,7 @@
                     "tag": "goodbye",
                     "patterns": ["Bye", "Goodbye", "Sayonara", "Tschuss", "Thank for your help", "bye nha", "Thank for your answers", "Tạm biệt"],
                     "response": [
-                        "(VI) Cám ơn bạn đã sử dụng chúng tôi và vui lòng đánh giá trải nghiệm \n(EN) Thank you for using us and please rate your experience\n(GE) Vielen Dank, dass Sie uns nutzen, und bitte bewerten Sie Ihre Erfahrung \n(FR) Merci de nous utiliser et s’il vous plaît évaluer votre expérience."
+                        "(VI): Cám ơn bạn đã sử dụng chúng tôi và vui lòng đánh giá trải nghiệm \n(EN): Thank you for using us and please rate your experience\n(GE): Vielen Dank, dass Sie uns nutzen, und bitte bewerten Sie Ihre Erfahrung \n(FR): Merci de nous utiliser et s’il vous plaît évaluer votre expérience."
                     ]
                 },
         
@@ -32,21 +32,60 @@
                 {
                     "tag": "daytime_today",
                     "patterns": ["what time is it", "What the date today", "hôm nay ngày nào nhỉ", "giờ là mấy giờ rồi"],
-                    "response": ["Hi"]
+                    "response": [""]
                 },
 
                 {
                     "tag": "working_hour",
-                    "patterns": ["Giờ làm việc ở Fsoft?", "what time do we start at work", "when do we end work", "giờ tan làm ở fsoft"],
+                    "patterns": ["Giờ làm việc ở Fsoft?", "giờ làm việc", "working time", "working hour", "giờ đi làm ở công ty", "offical time / hour at Fsoft",
+                                 "what time do we start at work", "when do we end work at fsoft", "giờ tan làm ở fsoft", "giờ hành chính ở fsoft"],
                     "response":[
-                        "(VI): Giờ làm việc ở Fsoft bắt đầu lúc 8:15 và kết thúc lúc 17:00\n From 8:15 to 17:00"
+                        "(VI): Giờ làm việc ở Fsoft buổi sáng bắt đầu lúc 8:15 và kết thúc lúc 12:00 và buổi chiều là 13:00-17:00\n(EN): From 8:15 to 12:00 in the morning and 13:00-17:00 in the afternoon"
                     ]
                 },
 
                 {
                     "tag": "log_off",
-                    "patterns": ["muốn xin nghỉ phép thì làm sao"],
-                    "response": ["Log đơn"]
+                    "patterns": ["muốn xin nghỉ phép thì làm sao", "working time report TMS tool", "xin nghỉ phép", "tôi muốn xin nghỉ phép", "tôi muốn xin work from home", "how to log WFH on TMS"],
+                    "response": ["(VI): Bạn có thể xin nghỉ phép bằng cách log đơn trên TMS (nếu số ngày phép của bạn còn hợp lệ). \n\t Các trường hợp khác (như WFH, đi trễ về sớm, etc) thì cần thông báo trước cho cán bộ quản lý của bạn, cho HR admin và BUL để được xử lý.\n\t Tất cả các đơn TMS, BUL sẽ approve 1 lần vào ngày cuối tháng nhé. Đến cuối tháng bạn vẫn không thấy approved thì có thể báo lại PM và BUL để được duyệt. \n\n (EN): If your number of leave days is still valid, you can log a leave application on TMS. Other situations (like WFH, late arrival, early departure, etc.) must be made aware to your manager, HR admin, and BUL in advance in order to be handled. \n\t At the end of each month, the BUL will approve all TMS orders. \n\t If you still don't see approved at the end of the month, you can report back to PM and BUL for approval."]
+                },
+
+                {
+                    "tag": "address-FHM",
+                    "patterns": ["where FSoft located in SaiGon", "địa chỉ FSOFT", "where is FHM", "FPT tọa lạc ở đâu", "FPT ở đâu", "FSOFT tọa lạc ở đâu?", "FHM nằm chỗ nào", "Fsoft sài gòn ở đâu?"],
+                    "response": ["(VI): Võ Chí Công - Quận 9 - TP HCM \n(EN): Vo Chi Cong St, District 9, HCM City"]
+                },
+
+                {
+                    "tag": "address-FTel",
+                    "patterns": ["where F-Tel located in SaiGon", "where is FTel in Ho Chi Minh", "F-Telecom ở đâu"],
+                    "response": ["(VI): Khu Chế Xuất Tân Thuận - Quận 7 - TP HCM \n(EN): District 7 HCMCity Tan Thuan"]
+                }, 
+
+                {
+                    "tag": "thank",
+                    "patterns": ["thank you", "thank for your help", "cám ơn đã tư vấn", "cám ơn", "merci beaucoup", "danke"],
+                    "response": [
+                                    "(VI): Không sao, rất vui đã giúp được bạn. \n(EN): You are welcome, nice to help you",
+                                    "(VI): Cám ơn bạn đã tin tưởng dịch vụ. \n(EN): Thank for your confidence to our service.",
+                                    "(VI): Đa tạ! Vui lòng đánh giá chất lượng chatbot. \n(EN): Many thanks! Please rate the chatbot to help us improve your experience"
+                                ]
+                },
+
+                {
+                    "tag": "offical check in",
+                    "patterns": ["vấn đề quẹt thẻ?", "Dữ liệu quẹt thẻ FPT?", "quẹt thẻ ra vào", "quẹt thẻ", "quẹt thẻ vào khoang làm việc", "quẹt thẻ FSOFT", "number of hours in offical area, Fsoft"],
+                    "response": ["(VI): Nhân viên ra vào khoang làm việc phải quẹt thẻ, công ty có ghi nhận giờ ra vào khoang làm việc.\n\t-Nếu dữ liệu quẹt thẻ dưới 6 tiếng: Tool sẽ tính nghỉ nửa ngày công.\n\t-Nếu dữ liệu quẹt thẻ dưới 3 tiếng: Tool sẽ tính nghỉ một ngày công. \n\n(EN): Employees must swipe their cards when entering and leaving the workspace, and the business will keep track of the times.\n\t-If the card swipe data is less than 6 hours, the tool will calculate a half-day.\n\t- If the card swipe data is less than 3 hours, the tool will subtract one working day."]                    
+                },
+
+                {
+                    "tag": "bus-info",
+                    "patterns": ["Tôi có thể tra cứu các thông tin về các tuyến bus tại FSOFT ở đâu?", "Cho tôi biết link chứa thông tin về các tuyến bus tại FSOFT ?", "bus-route at Fsoft", "bus schedule at Fsoft",
+                                 "Cho tôi biết thông tin về các shuttle bus qua lại giữa FTown3 và các bên FTown1-2", "Những thời điểm nào có bus di chuyển từ FTown3 sang FTown1-2 và ngược lại?",
+                                 "how to register bus route in Fsoft", "search bus info for each District in Ho Chi Minh City",
+                                 "Để đăng ký bus đi làm từ các quận thì tôi sẽ tham khảo ở đâu?", "cho tôi biết cách truy cập vào bus schedule trên portal ở fsoft"
+                                ],
+                    "response": ["(VI): B1. Vào https://portal.fpt-software.com/secure/SSCHome.jspa. \n\t  B2. Chọn tab `Useful Information` rồi chọn `bus schedule`. \n\t  Bạn có thể tìm hiểu các thông tin bạn muốn biết tại đây!"]
                 }
         ]
 }
