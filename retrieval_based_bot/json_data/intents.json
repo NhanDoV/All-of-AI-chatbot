@@ -3,8 +3,8 @@
                 {
                     "tag": "greeting", 
                     "patterns": [
-                                "Hi", "Hi BOT", "hello", "hello BOT", "xin chào", "bonjour", "salut",
-                                "hey", "hey BOT", "hello there", "hi there", "ni hao", "ohayo",
+                                "Hi", "Hi BOT", "hello", "hello BOT", "xin chào", "bonjour", "salut", "how are you",
+                                "hey", "hey BOT", "hello there", "hi there", "ni hao", "ohayo", "comment ca va",
                                 "ê","eh", "ê BOT", "hellu", "hella", "alo", "hallo", "konichiwa"
                                 ],
                     "response": [
@@ -45,8 +45,8 @@
                 },
 
                 {
-                    "tag": "log_off",
-                    "patterns": ["muốn xin nghỉ phép thì làm sao", "working time report TMS tool", "xin nghỉ phép", "tôi muốn xin nghỉ phép", "tôi muốn xin work from home", "how to log WFH on TMS"],
+                    "tag": "log_off_tms",
+                    "patterns": ["muốn xin nghỉ phép thì làm sao", "working time report TMS tool", "Khoảng mấy ngày BUL sẽ approve đơn TMS của tôi vậy?", "sau bao lâu thì các đơn TMS sẽ được xử lý", "khi nào đơn TMS sẽ được duyệt", "khi nào đơn TMS được phê duyệt", "khi nào đơn TMS được approved", "xin nghỉ phép", "tôi muốn xin nghỉ phép", "tôi muốn xin work from home", "how to log WFH on TMS"],
                     "response": ["(VI): Bạn có thể xin nghỉ phép bằng cách log đơn trên TMS (nếu số ngày phép của bạn còn hợp lệ). \n\t Các trường hợp khác (như WFH, đi trễ về sớm, etc) thì cần thông báo trước cho cán bộ quản lý của bạn, cho HR admin và BUL để được xử lý.\n\t Tất cả các đơn TMS, BUL sẽ approve 1 lần vào ngày cuối tháng nhé. Đến cuối tháng bạn vẫn không thấy approved thì có thể báo lại PM và BUL để được duyệt. \n\n (EN): If your number of leave days is still valid, you can log a leave application on TMS. Other situations (like WFH, late arrival, early departure, etc.) must be made aware to your manager, HR admin, and BUL in advance in order to be handled. \n\t At the end of each month, the BUL will approve all TMS orders. \n\t If you still don't see approved at the end of the month, you can report back to PM and BUL for approval."]
                 },
 
@@ -64,7 +64,7 @@
 
                 {
                     "tag": "thank",
-                    "patterns": ["thank you", "thank for your help", "cám ơn đã tư vấn", "cám ơn", "merci beaucoup", "danke"],
+                    "patterns": ["thank you", "thank for your help", "cám ơn đã tư vấn", "cám ơn", "merci beaucoup", "danke", "thanks"],
                     "response": [
                                     "(VI): Không sao, rất vui đã giúp được bạn. \n(EN): You are welcome, nice to help you",
                                     "(VI): Cám ơn bạn đã tin tưởng dịch vụ. \n(EN): Thank for your confidence to our service.",
@@ -74,7 +74,7 @@
 
                 {
                     "tag": "offical check in",
-                    "patterns": ["vấn đề quẹt thẻ?", "Dữ liệu quẹt thẻ FPT?", "quẹt thẻ ra vào", "quẹt thẻ", "quẹt thẻ vào khoang làm việc", "quẹt thẻ FSOFT", "number of hours in offical area, Fsoft"],
+                    "patterns": ["working time report issue", "vấn đề quẹt thẻ?", "Dữ liệu quẹt thẻ FPT?", "quẹt thẻ dưới 3 tiếng thì như thế nào", "dữ liệu trong khoang làm việc dưới 5 tiếng", "quẹt thẻ ra vào", "quẹt thẻ", "quẹt thẻ vào khoang làm việc", "quẹt thẻ FSOFT", "number of working hours in offical area, Fsoft", "working hours is not enough 6 hours a day"],
                     "response": ["(VI): Nhân viên ra vào khoang làm việc phải quẹt thẻ, công ty có ghi nhận giờ ra vào khoang làm việc.\n\t-Nếu dữ liệu quẹt thẻ dưới 6 tiếng: Tool sẽ tính nghỉ nửa ngày công.\n\t-Nếu dữ liệu quẹt thẻ dưới 3 tiếng: Tool sẽ tính nghỉ một ngày công. \n\n(EN): Employees must swipe their cards when entering and leaving the workspace, and the business will keep track of the times.\n\t-If the card swipe data is less than 6 hours, the tool will calculate a half-day.\n\t- If the card swipe data is less than 3 hours, the tool will subtract one working day."]                    
                 },
 
@@ -85,32 +85,186 @@
                                  "how to register bus route in Fsoft", "search bus info for each District in Ho Chi Minh City",
                                  "Để đăng ký bus đi làm từ các quận thì tôi sẽ tham khảo ở đâu?", "cho tôi biết cách truy cập vào bus schedule trên portal ở fsoft"
                                 ],
-                    "response": ["(VI): B1. Vào https://portal.fpt-software.com/secure/SSCHome.jspa. \n\t  B2. Chọn tab `Useful Information` rồi chọn `bus schedule`. \n\t  Bạn có thể tìm hiểu các thông tin bạn muốn biết tại đây!"]
-                },
-        
-                {
-                    "tag": "half check in",
-                    "patterns": ["quẹt thẻ dưới 3 tiếng bị gì", "nếu dữ liệu quẹt thẻ là 3 tiếng", 
-                                 "Dữ liệu quẹt thẻ dưới 3 tiếng ?", "quẹt thẻ 2 tiếng", "quẹt thẻ 1 tiếng", "quẹt thẻ dưới 1 tiếng", "dưới 2 giờ làm việc",
-                                 "thế quẹt thẻ có 2 tiếng thôi thì sao?", "dưới 3 tiếng nhưng đã trên 2 giờ làm việc", "dưới 3 giờ làm việc", "dưới 1 giờ làm việc",
-                                 "dưới 2 tiếng nhưng đã trên 1 giờ làm việc", "dưới 1 tiếng làm việc"
-                                ],
-                    "response": ["Nếu dữ liệu quẹt thẻ dưới 3 tiếng: Tool sẽ tính nghỉ một ngày công (trừ một ngày lương) \n If you are less than 3 hour in the working area: Unreasonable leave for entire day"]
-                },
-               {
-                    "tag": "full check in",
-                    "patterns": ["quẹt thẻ dưới 6 tiếng bị gì?", "nếu quẹt thẻ dưới 6 tiếng", "nếu quẹt thẻ dưới 6 giờ làm việc", "dưới 6 tiếng làm việc thì sao?",
-                                 "Dữ liệu quẹt thẻ dưới 6 tiếng thì sao?", "nếu quẹt thẻ 5 tiếng", "quẹt thẻ 4 tiếng", "dưới 6 giờ làm việc thì sao?",
-                                 "dưới 6 tiếng nhưng đã trên 5 giờ làm việc", "dưới 5 tiếng nhưng đã trên 4 giờ làm việc", "dưới 5 giờ làm việc", "dưới 4 giờ làm việc",
-                                 "dưới 4 tiếng nhưng đã trên 3 giờ làm việc"
-                                ],
-                    "response": ["Nếu dữ liệu quẹt thẻ dưới 6 tiếng: Tool sẽ tính nghỉ nửa ngày công (mất nửa ngày lương), còn trên mức này rồi thì đừng hỏi nữa, cám ơn!!. \n If you are less than 6 hour in the working area: Unreasonable leave for a half day"]
+                    "response": ["(VI):\n\tB1. Vào https://portal.fpt-software.com/secure/SSCHome.jspa.\n\tB2. Chọn tab `Useful Information` rồi chọn `bus schedule`.\n\tBạn có thể tìm hiểu các thông tin bạn muốn biết tại đây! \n(EN):\n\tB1. Go to https://portal.fpt-software.com/secure/SSCHome.jspa. \n\tB2. Select the `Useful Information` tab and then select `bus schedule`. \n\tYou can find out what you want to know here!"]
                 },
 
                 {
-                    "tag": "confirm-check in",
-                    "patterns": ["trên 5 giờ làm việc", "trên 4 giờ làm việc", "trên 3 giờ làm việc", "trên 2 giờ làm việc", "trên 1 tiếng làm việc"],
-                    "response": ["bạn cần nói rõ số giờ (và phút) đã có mặt ở đơn vị / nơi làm việc"]
-                },            
+                    "tag": "log_off_type",
+                    "patterns": ["thông tin nghỉ phép", "nhân viên nghỉ phép", "nghỉ phép cần làm gì?", "số ngày phép trong năm", 
+                                "log-off", "thủ tục xin nghỉ phép", "log off", " thông tin ngày phép", "logoff", "annual holiday fsoft", " annual off dates",
+                                "mới vào fsoft thì có phép không", "xin phép để off"
+                                ],
+                    "response": ["(VI): Chào bạn, để biết lịch nghỉ phép hàng năm thì vui lòng vào đây https://portal.fpt-software.com/secure/ShowContent.jspa?id=23 , còn \n nhân viên nghỉ phép cần trao đổi trực tiếp với người quản lý (Line Manager) sau đó thực hiện log tool online. Mỗi tháng nhân viên sẽ có thêm 1 ngày phép vào quỹ ngày phép. Tổng cộng có 12 ngày phép/năm. Xin cho biết hợp đồng của bạn là gì trong các loại dưới đây: \n\t OJT, \n\t nhân viên thử việc, \n\t nhân viên chính thức.\n(EN): To learn more the annualy holiday, please visit this page https://portal.fpt-software.com/secure/ShowContent.jspa?id=23, and \n the employee on leave needs to talk directly with the manager (Line Manager) then perform the online log tool. Each month, employees will have 1 additional day of leave to the leave fund. A total of 12 days of leave/year. Please indicate what your contract is in the following categories: \n\t OJT, \n\t probation employee, \n\t full-time employee"]
+                },
+                {
+                    "tag": "OJT-logoff",
+                    "patterns": ["OJT nghỉ phép", "nhân viên OJT nghỉ phép", "nghỉ phép khi đang là OJT", "OJT log-off", "nghỉ phép khi đang là OJT", "nghỉ phép diện OJT"],
+                    "response": ["(VI): Chào bạn, nhân viên OJT không log phép trên tool. Nhân viên OJT tự chủ động liên hệ với PM/Line Manager để sắp xếp thời gian lên công ty hợp lý.\n(EN): The OJT staffs do not log permission on the tool. OJT staff automatically contact PM/Line Manager to arrange a reasonable time to the company."]
+                },
+                {
+                    "tag": "official-logoff",
+                    "patterns": ["nhân viên chính thức xin nghỉ phép", "nghỉ phép khi là nhân viên chính thức", "vào làm chính thức nghỉ phép", "nghỉ phép khi đã ký hợp đồng lao động chính thức"],
+                    "response": ["(VI): Chào bạn, nhân viên chính thức sẽ nói chuyện với quản lý trực tiếp về ngày nghỉ của mình để được duyệt, sau đó log đơn nghỉ phép trên tool. \n(EN): The official staff will talk to their direct manager about their leave for approval, then log the leave application on the tool."]
+                },
+                {
+                    "tag": "probation-logoff",
+                    "patterns": ["nghỉ phép khi thử việc", "nhân viên thử việc xin nghỉ phép", "log-off in probation time", "nghỉ phép khi đang là nhân viên thử việc"],
+                    "response": ["(VI): Chào bạn, trong thời gian thử việc, nhân viên chưa nhận được ngày phép. Sau thời gian thử việc, hệ thống sẽ bù số ngày phép cho nhân viên tùy theo số tháng thử việc (mỗi tháng 1 ngày). \n(EN): During the probationary period, the employee has not received any leave. After the probationary period, the system will compensate the number of leave days for the employee depending on the number of probationary months (1 day per month)."]
+                },
+                {
+                    "tag": "time to logoff",
+                    "patterns": ["thời gian xin nghỉ phép", "quy định thời gian khi xin nghỉ phép", "xin phép bao lâu trước khi nghỉ phép"],
+                    "response": ["(VI): Chào bạn, bạn cần gửi đơn xin phép đến quản lý trực tiếp,\n\t Nếu thời gian nghỉ phép (1-2) ngày thì hãy xin trước ít nhất 1 ngày làm việc.\n\t Nếu thời gian nghỉ phép > 3 ngày thì hãy xin trước ít nhất 1 tuần làm việc. \n(EN): you need to send an application to your line manager,\n\t If the leave period is 1-2 days, please apply at least 1 working day in advance.\n\t If the leave period is > 3 days Please apply at least 1 working week in advance."]
+                },
+                {
+                    "tag": "time logoff 1-2 days",
+                    "patterns": ["xin nghỉ phép 1 ngày cần làm gì", "xin nghỉ phép 1 buổi cần làm gì", "xin nghỉ phép 3 buổi cần làm gì", "xin nghỉ phép 2 buổi cần làm gì", "xin nghỉ phép 2 ngày cần làm gì"],
+                    "response": ["(VI): Chào bạn, bạn cần gửi đơn xin phép đến quản lý trực tiếp, hãy xin trước ít nhất 1 ngày làm việc. \n(EN): you need to send an application-form to your line manager, please apply at least 1 working day in advance."]
+                },
+                {
+                    "tag": "time logoff 1 week",
+                    "patterns": ["nghỉ phép 3 ngày cần làm gì", "nếu nghỉ phép 2 tuần cần làm gì", "nghỉ phép 4 ngày cần làm gì", "nghỉ phép 5 ngày cần làm gì", "xin được nghỉ phép 1 tuần cần làm gì", "xin nghỉ phép 2 tuần cần làm gì", "xin nghỉ phép 3 tuần cần làm gì", "xin nghỉ phép 4 tuần cần làm gì", "xin nghỉ phép 1 tháng cần làm gì", "nghỉ phép nhiều hơn 1 tuần cần làm gì"],
+                    "response": ["(VI): Chào bạn, bạn cần gửi đơn xin phép đến quản lý trực tiếp, hãy báo trước ít nhất 1 tuần làm việc. \n(EN): You need to send an application-form for permission to your direct manager, at least 1 working week in advance."]
+                },
+
+                {
+                    "tag": "late_range",
+                    "patterns": ["sau bao lâu sẽ bị tính là đi trễ", "vào làm việc sau 8g15", "vào làm việc sau 8 giờ 15", "sau bao lâu sẽ bị tính là đi muộn", "đi làm sau mấy giờ sẽ bị xem là đi trễ", "đi làm sau mấy giờ sẽ bị xem là vào muộn"],
+                    "response": ["(VI): sau 8h15 sẽ được tính là đi trễ/muộn nhé, bạn tự tính cho trường hợp của bạn! Nếu đi trễ bạn sẽ bị trừ 20k / lần trễ vào lương tháng 13. \n(EN): After 8:15 will be counted as late / late, you calculate for your own case! If you are late, you will be deducted 20k / late from your 13th month salary."]
+                },
+                {
+                    "tag": "early_range",
+                    "patterns": ["sau bao lâu sẽ bị tính là về sớm", "sau bao lâu sẽ bị tính là về sớm", "khi nào sẽ bị tính là về sớm", "về trước 17h", "về trước 16h"],
+                    "response": ["(VI): về sớm là ra về trước 17h nhé (16h59 cũng là về sớm, bạn tự tính cho trường hợp của bạn)! Nếu về sớm, bạn sẽ bị trừ 20k / lần vào lương tháng 13. \n(EN): If you leave early, you will leave before 5:00 pm (16:59 is also leaving early, you can calculate it for yourself)! If you leave early, you will be deducted 20k / time from your 13th month salary."]
+                },                
+                {
+                    "tag": "lateness",
+                    "patterns": ["đi muộn cần làm gì", "đi trễ cần làm gì", "về sớm không lý do", "đi trễ không lý do", "về sớm cần làm gì", "ra về sớm cần làm gì", "đi muộn chính đáng cần làm gì", "về sớm chính đáng cần làm gì"],
+                    "response": ["(VI): Nhân viên cần xin phép PM/Quản lý trực tiếp và sau đó log đơn Đi muộn/Về sớm với lý do chính đáng trên TMS. \n(EN): All employee must ask permission from PM/Director and then log Late/Early Leave application with good reason on TMS"]
+                },
+                {
+                    "tag": "late-invalid",
+                    "patterns": ["đi muộn không chính đáng bị gì", "đi muộn bị gì", "về sớm bị gì", "về sớm không lý do bị gì", "đi muộn không lý do bị gì", "đi muộn về sớm không lý do chính đáng bị gì"],
+                    "response": ["(VI): Theo quy định, nếu bạn (anh / chị) đi muộn, về sớm không log đơn: bị trừ 20,000đ/lần. \n(EN): According to the regulations, if you (he / she) go late, leave early without logging in: 20,000 VND / time will be deducted."]
+                },
+                {
+                    "tag": "absence-alert",
+                    "patterns": ["Trường hợp khẩn cấp cần nghỉ phép", "nghỉ phép vì lý do đột xuất", "nghỉ phép vì việc ngoài ý muốn"],
+                    "response": ["(VI): Anh / chị cần thông báo nghỉ phép qua điện thoại hoặc email.", "Trường hợp này, bạn cần thông báo nghỉ phép qua điện thoại hoặc email. \n(EN): You need to notify the leave by phone or email.", "In this case, you need to notify the leave by phone or email."]
+                },
+
+                {
+                    "tag": "loss_carde",
+                    "patterns": ["Thẻ của tôi bị mất, làm mới như thế nào nhỉ?", "làm sao khi bị mất thẻ ra vào"],
+                    "response": ["(VI): Dạ anh/chị log ticket tại đây: https://portal.fpt-software.com/secure/SSC01CreateTicket.jspa?processId=93&catalogId=75&issueKeys=. \n\t- Thời gian dự kiến: 3-5 ngày có thẻ mới. \n\t- Chi phí làm lại thẻ: 100,000/thẻ. \n\t- Trong thời gian chờ có thẻ mới, anh/chị vui lòng mượn thẻ tạm tại quầy lễ tân. \n(EN): First, log your ticket here: https://portal.fpt-software.com/secure/SSC01CreateTicket.jspa?processId=93&catalogId=75&issueKeys=. \n\t- Estimated time: 3-5 days with new cards. \n\t- Card renewal fee: 100,000/card. \n\t- While waiting for a new card, please borrow a temporary card at the front desk."]
+                },
+
+                {
+                    "tag": "borrow_carde",
+                    "patterns": ["Hôm nay anh/chị quên thẻ ở nhà, mượn thẻ ở đâu nhỉ?", "Hôm nay tôi quên thẻ ở nhà, mượn thẻ ở đâu hả?", "Hôm nay dự án có khách hàng ghé thăm Ftown, mượn thẻ khách ở đâu?", "mượn thẻ cho khách ở đâu?"],
+                    "response": ["(VI): Dạ anh/chị mượn thẻ tạm tại quầy lễ tân. \n(EN): You can borrow a temporary card at the front desk."]
+                },
+
+                {
+                    "tag": "MyFPT-ebus",
+                    "patterns": ["Tôi phải check in bus như thế nào và check in tối thiểu bao nhiêu lần một tháng?", "số lần check in bus trên myFPT", 
+                                 "ebus trên MyFPT", "check in bus trên myFPT như thế nào?"],
+                    "response":["(VI): Bạn cần tải app MyFPT, vào mục e-bus và check in trước 12h trưa hàng ngày. \n Bạn cần check in tối thiểu 11 lần một tháng, nếu không bạn phải đăng ký lại. \n(EN): You need to download the MyFPT app, go to the e-bus section and check in before 12 noon every day. \n You need to check in at least 11 times a month, otherwise you have to re-register"]
+                },
+                {
+                    "tag": "install permission",
+                    "patterns": ["download phần mềm", "cài đặt phần mềm", "whitelist", "blacklist", "WHITE LIST", "black list", "những ứng dụng được phép sử dụng", "những phần mềm được cho phép", "những phần mềm bị cấm"],
+                    "response": ["Nhân viên không download phần mềm trên mạng để cài đặt vào máy tính. Các phần mềm cài đặt vào máy tính phải nằm trong WHITELIST của công ty. <br> \t\t Link check Whitelist/Backlist: https://qms.fsoft.com.vn/#/document-master-list > Master List > Gõ vào ô Keyword: “Blacklist”."]
+                },
+
+                {
+                    "tag": "IT",
+                    "patterns": ["tui là IT", "tao là IT, tao muốn hỏi", "IT đây", "This is IT.FHM", "This is IT.FHN", "THis is IT FSOFT", "IT FPT"],
+                    "response": [
+                                    "Dume IT, diss con mẹ mày làm gì giờ mới thấy",
+                                    "IT IT cái củ kẹt, clmm đừng test nữa",
+                                    "Clm chúng mày trốn đâu hết rồi mà giờ issues của bố mày chưa xong",
+                                    "Cdm bọn IT FSOFT tụi bây cũng biết test chatbot à",
+                                    "IT-sinh vật ngu nhất và nguy hiểm nhất FSOFT",
+                                    "Nổ tên tuổi, địa chỉ nhà mày ra đây xem con cờ hó.",
+                                    "Fuck ya IT", "Damm IT", "Fuck cả lò IT.", "IT is in the (ass) hole"
+                                ]
+                },                
+                {
+                    "tag": "email-cho",
+                    "patterns": ["sử dụng email tại FSOFT", "sử dụng email công việc", "email trong dự án", "email hỏi thăm đồng nghiệp", 
+                                 "cho biết các thông tin về việc sử dụng email ở FSoft"
+                               ],
+                    "response": ["Nhân viên chỉ sử dụng email cho mục đích công việc và dự án, không được phục vụ mục đích cá nhân (mua sắm / giải trí / trao đổi với email ngoài công việc). Nếu dự án có yêu cầu gửi và nhận từ free mail thì nhân viên email cho PM, BUL, cc Admin (ViPA). Sau khi có confirm từ PM và BUL thì Admin sẽ log request cho nhân viên."]
+                },
+
+                {
+                    "tag": "email-chê",
+                    "patterns": ["sử dụng email để mua sắm", "dùng email cty bán dữ liệu", "sử dụng email cty tuồn bán dữ liệu được hong?", 
+                                "có thể sử dụng email cty cấp để mua sắm không?", "có thể sử dụng email cty cấo để lướt shopee không?", "có thể sử dụng email cty cấp để shoping không?",
+                                "có thể sử dụng email cty cấp để vào Lazada không?", "có thể sử dụng email cty để vào Grab không?", "có thể sử dụng email công ty để tạo tài khoản shopee, lazada, grab, netflix không?",
+                                "có thể sử dụng email công ty trao đổi công việc ngoài dự án không?", "có thể sử dụng email công ty trao đổi công việc với bên ngoài không?",
+                                "dùng email cty bán data ông PM", "xài email cty bán data ông PM", "xài email cty bán dữ liệu anh em", "sử dụng email cty bán dữ liệu anh em", "email để đặt hàng online", "email để bán thông tin đồng nghiệp", "vậy xài email công ty mua sắm ?", "xài email FSOFT mua hàng trên mạng", "xài email FPT mua hàng trên mạng", "email công ty mua hàng trên mạng", "dùng email công ty mua hàng trên mạng", "sử dụng email công ty để mua sắm trên mạng", "email fsoft lướt Lazada", "email fsoft lướt tiki", "email fsoft lướt shopee", "email fsoft lướt sendo"],
+                    "response": ["Bạn không được sử dụng email để đăng ký/gửi/nhận thông tin trên bất kỳ trang giải trí/mua sắm… nào bên ngoài. Nếu dự án của bạn có yêu cầu gửi và nhận từ free mail thì nhân viên email cho PM, BUL, cc Admin (ViPA). Sau khi có confirm từ PM và BUL thì Admin sẽ log request cho nhân viên."]
+                },
+                {
+                    "tag": "documentary",
+                    "patterns": ["sử dụng tài liệu ở FPT", "được upload tài liệu không?", "dùng tài liệu như thế nào", "tài liệu với ISMS", "bảo mật thông tin với việc sử dùng tài liệu"],
+                    "response": ["Nhân viên chỉ sử dụng tài liệu của công ty, tài liệu của dự án… cho mục đích công việc, hành động chia sẻ thông tin dự án và tài liệu cho người khác là vi phạm quy định bảo mật của công ty và bị cấm. Nhân viên không upload tài liệu lên mạng… để tránh các incident về qui định bảo mật thông tin (ISMS) của công ty. Các qui định cụ thể khác sẽ được phổ biến trong các kỳ thi ISMS được tổ chức hằng năm."]
+                },
+                {
+                    "tag": "documentary-banned",
+                    "patterns": ["được upload tài liệu dự án không?", "dùng tài liệu như thế nào để tránh ISMS", "vi phạm bảo mật thông tin với việc sử dùng tài liệu"],
+                    "response": ["Những hành động chia sẻ thông tin dự án và tài liệu cho người khác (khi không báo qua các bộ phận liên quan) là vi phạm quy định bảo mật của công ty và bị cấm. Nhân viên không upload tài liệu lên mạng để tránh các incident về qui định bảo mật thông tin (ISMS) của công ty, anh chị cần được sự cho phép của PM và phía khách hàng."]
+                },
+                {
+                    "tag": "documentary-valid",
+                    "patterns": ["sử dụng tài liệu hợp lý", "những tình huống đươc phép sử dụng tài liệu", "sử dụng tài liệu dự án FSOFT"],
+                    "response": ["Nhân viên chỉ sử dụng tài liệu của công ty, tài liệu của dự án… cho mục đích công việc"]
+                },
+
+                {
+                    "tag": "printer-quiz",
+                    "patterns": ["printer", "hỏi về máy in", "sử dụng máy in", "request máy in", "yêu cầu máy in", "các lưu ý khi dùng máy in"],
+                    "response": ["bạn muốn hỏi gì về việc sử dụng máy in?<br> \t-quy định khi sử dụng máy in <br> \t-cách cài đặt... hay<br> \t-cách request quyền máy in?"]
+                },
+
+                {
+                    "tag": "printer-rule",
+                    "patterns": ["quy định về việc sử dụng máy in", "quy định khi sử dụng máy in", "quy định sử dụng máy in", "cần chú ý gì khi sử dụng máy in"],
+                    "response": [
+                        "<br> - Nhân viên in nội dung liên quan công việc, với số lượng ít (100 trang trở xuống) thì sử dụng máy in tại khoang làm việc. <br> - Nếu Nhân viên cần in số lượng nhiều và đóng thành cuốn trong trường hợp cần gửi tài liệu cho khách hàng thì báo với PM để yêu cầu SSC in giùm, dự án thanh toán các chi phí."                    ]
+                },
+                {
+                    "tag": "printer-install",
+                    "patterns": ["về việc cài đặt máy in", "hướng dẫn cài đặt máy in", "cài đặt sử dụng máy in như thế nào", "cài đặt sử dụng máy in bằng cách nào", "cách cài đặt máy in", "printer-driver"],
+                    "response": [
+                        "<br>  B1. vào đường dẫn \\hcm-printsrv02,<br>  B2. click chọn Printer-FHM.AVI để cài đặt printer driver.<br> \t Ghi chú: Nếu dùng wifi không vào đường dẫn trên được thì cắm dây mạng rồi thử lại."
+                    ]
+                },
+                {
+                    "tag": "printer-request",
+                    "patterns": ["request sử dụng máy in", "request máy in", "cách yêu cầu cấp máy in", "hướng dẫn cách request xài máy in", "cách request sử dụng máy in", "cách request máy in"],
+                    "response": ["<br> \tBước 1: Vào trang https://fpt.workplace.com/groups/fsoft.it/ <br> \tBước 2: Đăng issue lên workplace: <br> \t'Dear IT, Nhờ IT cấp quyền máy in cho member <Account> vào máy in khoang AVI (Tầng 2, FT3). Máy in số hiệu: GDU.3A HP LaserJet 400 Thanks IT.' <br> \tBước 3: Tag BUL @TanTQM vào để BUL confirm. <br> \tBước 4: Theo dõi và chờ kết quả."]
+                },
+
+                {
+                    "tag": "printer-error",
+                    "patterns": ["máy in bị hỏng thì tôi nên làm gì", "xử lý như thế nào nếu máy in bị hư", "nếu máy in có vấn đề về mực in, giấy in hoặc bị lỗi thì tôi cần làm gì?"],
+                    "response": ["Liên hệ / báo lại với Admin của BU bạn (ViPA nếu bạn ở AVI)"]
+                },
+
+                {
+                    "tag": "FSOFT Portal",
+                    "patterns":["Portal FSOFT", "FSOFT Portal", "Employee Service Portal"],
+                    "response": ["Đây là nơi cung cấp thông tin và dịch vụ cho Nhân viên theo link: https://portal.fpt-software.com/secure/SSCHome.jspa"]
+                },
+
+                {
+                    "tag": "which_floor",
+                    "patterns": ["AVI ở tầng mấy", "khoang làm việc ở đâu", "where is the cabin office", "which floor do we work at"],
+                    "response": ["AVI, CMS, ADG ở tầng 2, IT ở tầng 3; còn mấy BU kia thì Bot hok biết, bạn lên cty hỏi lễ tân đi"]
+                }
+                
         ]
 }
