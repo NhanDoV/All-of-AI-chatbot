@@ -264,7 +264,37 @@
                     "tag": "which_floor",
                     "patterns": ["AVI ở tầng mấy", "khoang làm việc ở đâu", "where is the cabin office", "which floor do we work at"],
                     "response": ["AVI, CMS, ADG ở tầng 2, IT ở tầng 3; còn mấy BU kia thì Bot hok biết, bạn lên cty hỏi lễ tân đi"]
-                }
+                },
+{
+                    "tag": "bookme",
+                    "patterns": ["đặt phòng họp FT3", "bookme", "book phòng họp", "đặt phòng ở FT1", "book phòng họp FT3", "book phòng họp ở FT2",
+                                 "cách book phòng meeting ở Fsoft", "làm sao để đặt phòng họp ở fsoft cho dự án"
+                                 ],
+                    "responses": ["Cách book phòng họp: https://bookme.fsoft.com.vn/Web/schedule.php. <br> \tChọn địa chỉ FT1/FT2/FT3, ngày giờ và book phòng."]
+               },
+               {
+                    "tag": "site-blocked",
+                    "patterns": ["Để mở link bị chặn bằng cách nào", "làm thế nào để sử dụng tool bị IT chặn", "làm thế nào để sử dụng tool bị đám lz IT chặn", 
+                                 "dùng tool trong black list", "để dùng tool bị IT chận thì cần làm gì", "dự án yêu cầu Github nhưng Github bị cấm", 
+                                 "xin mở port vào Gihtub", "Cần quyền để cài đặt các thư viện python từ Git", "không dùng google colab được thì mở port như thế nào"
+                                ],
+                    "response": ["Để mở các Link phục vụ công việc (dự án) nhưng đang bị Fsoft chặn, truy cập link sau: https://portal.fpt-software.com/secure/SSC01CreateTicket.jspa?processId=58&catalogId=14&issueKeys. <br> \t và tạo ticket. <br> Ticket này cần phải đính kèm CM Plan (contact PM để xin)"] 
+               },
+               {
+                    "tag": "head-phone",
+                    "patterns": ["mua tai nghe", "mua hàng", "tai nghe", "head phone", "head-phone", "muốn cấp tai nghe, tôi cần làm gì?", 
+                                 "muốn cấp headphone cần làm gì", "làm thế nào để được cấp headphone", "làm thế nào để được cấp earphone",
+                                 "làm sao để được cấp tai nghe", "quy trình xin cấp tai nghe", "làm sao để request tai nghe?", "làm sao để request headphone"
+                                ],
+                    "response": [
+                        "Nếu bạn mua để phục vụ công việc, bạn cần báo PM trực tiếp. Sau khi PM đồng ý, hãy email cho BUL, cc PM + ViPA. Sau khi BUL confirm thì ViPA log mua"
+                    ]
+               },
+               {
+                   "tag": "data_analyst_skill",
+                   "patterns": ["Các kỹ năng và công cụ cần biết nếu muốn trở thành Data Analyst", "Which tools a Data analyst must know", "which skills data analyst must have"],
+                   "response": ["Data analysts require a high level of mathematical ability, the ability to analyze, model, and interpret data, problem-solving skills, a methodical and logical approach, the ability to plan work and meet deadlines, accuracy and attention to detail, interpersonal skills, and teamworking skills. \n\n Skills: \n\t- Data Cleaning and Preparation. \n\t- Data Analysis and Exploration \n\t- Statistical Knowledge \n\t- Creating Data Visualizations \n\t- Creating Dashboards and Reports \n\t- Writing and Communication \n\t- Domain Knowledge in a certain business \n\t- Problem-Solving. \n\n Tools: \n\t- SQL, Excel \n\t- PowerBI, Tableau, Qlik \n\n How to learn: \n\t- Bootcamp \n\t- Online Community"]
+               }
                 
         ]
 }
