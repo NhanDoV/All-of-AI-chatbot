@@ -3,8 +3,7 @@
                 {
                     "tag": "greeting", 
                     "patterns": [
-                                "Hi", "Hi BOT", "hello", "hello BOT", "xin chào", "bonjour", "salut", "how are you",
-                                "hey", "hey BOT", "hello there", "hi there", "ni hao", "ohayo", "comment ca va",
+                                "Hi", "Hi BOT", "hello", "hello BOT", "xin chào", "bonjour", "salut", "hey", "hey BOT", "hello there", "hi there", "ni hao", "ohayo", "comment ca va",
                                 "ê","eh", "ê BOT", "hellu", "hella", "alo", "hallo", "konichiwa"
                                 ],
                     "response": [
@@ -237,14 +236,14 @@
                 },
                 {
                     "tag": "printer-install",
-                    "patterns": ["về việc cài đặt máy in", "hướng dẫn cài đặt máy in", "cài đặt sử dụng máy in như thế nào", "cài đặt sử dụng máy in bằng cách nào", "cách cài đặt máy in", "printer-driver"],
+                    "patterns": ["về việc cài đặt máy in", "hướng dẫn cài đặt máy in", "how to use or get a instruction for printer at Fsoft?", "cài đặt sử dụng máy in như thế nào", "cài đặt sử dụng máy in bằng cách nào", "cách cài đặt máy in", "printer-driver"],
                     "response": [
                         "<br>  B1. vào đường dẫn \\hcm-printsrv02,<br>  B2. click chọn Printer-FHM.AVI để cài đặt printer driver.<br> \t Ghi chú: Nếu dùng wifi không vào đường dẫn trên được thì cắm dây mạng rồi thử lại."
                     ]
                 },
                 {
                     "tag": "printer-request",
-                    "patterns": ["request sử dụng máy in", "request máy in", "cách yêu cầu cấp máy in", "hướng dẫn cách request xài máy in", "cách request sử dụng máy in", "cách request máy in"],
+                    "patterns": ["request sử dụng máy in", "request máy in", "cách yêu cầu cấp máy in", "how to request a printer at fsoft", "hướng dẫn cách request xài máy in", "cách request sử dụng máy in", "cách request máy in"],
                     "response": ["<br> \tBước 1: Vào trang https://fpt.workplace.com/groups/fsoft.it/ <br> \tBước 2: Đăng issue lên workplace: <br> \t'Dear IT, Nhờ IT cấp quyền máy in cho member <Account> vào máy in khoang AVI (Tầng 2, FT3). Máy in số hiệu: GDU.3A HP LaserJet 400 Thanks IT.' <br> \tBước 3: Tag BUL @TanTQM vào để BUL confirm. <br> \tBước 4: Theo dõi và chờ kết quả."]
                 },
 
@@ -268,9 +267,9 @@
 {
                     "tag": "bookme",
                     "patterns": ["đặt phòng họp FT3", "bookme", "book phòng họp", "đặt phòng ở FT1", "book phòng họp FT3", "book phòng họp ở FT2",
-                                 "cách book phòng meeting ở Fsoft", "làm sao để đặt phòng họp ở fsoft cho dự án"
+                                 "cách book phòng meeting ở Fsoft", "làm sao để đặt phòng họp ở fsoft cho dự án", "how to book a room"
                                  ],
-                    "responses": ["Cách book phòng họp: https://bookme.fsoft.com.vn/Web/schedule.php. <br> \tChọn địa chỉ FT1/FT2/FT3, ngày giờ và book phòng."]
+                    "response": ["Cách book phòng họp: https://bookme.fsoft.com.vn/Web/schedule.php. <br> \tChọn địa chỉ FT1/FT2/FT3, ngày giờ và book phòng."]
                },
                {
                     "tag": "site-blocked",
@@ -292,9 +291,25 @@
                },
                {
                    "tag": "data_analyst_skill",
-                   "patterns": ["Các kỹ năng và công cụ cần biết nếu muốn trở thành Data Analyst", "Which tools a Data analyst must know", "which skills data analyst must have"],
+                   "patterns": ["how to become a data analyst", "Các kỹ năng và công cụ cần biết nếu muốn trở thành Data Analyst", "Which tools a Data analyst must know", "which skills data analyst must have"],
                    "response": ["Data analysts require a high level of mathematical ability, the ability to analyze, model, and interpret data, problem-solving skills, a methodical and logical approach, the ability to plan work and meet deadlines, accuracy and attention to detail, interpersonal skills, and teamworking skills. \n\n Skills: \n\t- Data Cleaning and Preparation. \n\t- Data Analysis and Exploration \n\t- Statistical Knowledge \n\t- Creating Data Visualizations \n\t- Creating Dashboards and Reports \n\t- Writing and Communication \n\t- Domain Knowledge in a certain business \n\t- Problem-Solving. \n\n Tools: \n\t- SQL, Excel \n\t- PowerBI, Tableau, Qlik \n\n How to learn: \n\t- Bootcamp \n\t- Online Community"]
-               }
-                
+               },
+               {
+                "tag": "data_engineer_skill",
+                "patterns": ["how to become a data engineer", "Engineering skills", "Data engineer responsibilities", "Các kỹ năng và công cụ cần biết nếu muốn trở thành Data Engineer", "Which tools a Data Engineer must know", "which skills data Engineer must have"],
+                "response": ["A data engineer is an engineering role within a data science team or any data related project that requires creating and managing technological infrastructure of a data platform.\n\n * Responsibilities: \n\t - Architecture design. \n\t - Development of data related instruments/instances. \n\t - Data pipeline maintenance/testing. \n\t - Machine learning algorithm deployment. \n\t - Manage data and meta-data. \n\t - Provide data-access tools. \n\t - Track pipeline stability. \n\n * Skills: \n\t - Software: C++/C# / Scala/ Python / R / Golang / etc. \n\t - ETL, ELT & administration database \n\t - Database / Datawarehouse: SQL-No SQL / AWS Redshift / Oracle / Apache Hive / etc, \n\t - Nice to have: \n\t\t + Big data: Hadoop and Kafka \n\t\t + ML Frameworks & libraries:  TensorFlow, Spark, PyTorch, mlpack \n\t\t + BI tools: Power BI / Tableau / Qlik / AWS QuickSight \n\t\t + Cloud: AWS / Azure / GCP"]
+            },
+
+            {
+                "tag": "when_data_engineer",
+                "patterns": ["when a business need a data engineer", "khi nào cần đến một data engineer", "When to hire a data engineer?"],
+                "response": [" + Scaling your data science team. \n\tWhen your team of data specialists reaches the point when there is nobody to carry technical infrastructure, a data engineer might be a good choice in terms of a general specialist.\n + Big data projects. \n\tCurrently, data engineering shifts towards projects that aim at processing big data, managing data lakes, and building expansive data integration pipelines for noSQL storages. In this case, a dedicated team of data engineers with allocated roles by infrastructure components is optimal. \n + Requiring custom data flows. \n\tEven for medium-sized corporate platforms, there may be the need for custom data engineering. Extract, Transform, Load is just one of the main principles applied mostly to automated BI platforms. In practice, a company might leverage different types of storages and processes for multiple data types. This involves a large technological infrastructure that can be architected and managed only by a diverse data specialist. A data engineer in this case is much more suitable than any other role in the data domain."]
+            },
+            # https://www.altexsoft.com/blog/what-is-data-engineer-role-skills/
+            {
+                "tag": "warehouse_lake_mart",
+                "patterns": ["Data Ware-house", ""],
+                "response": [""]
+            }
         ]
 }
