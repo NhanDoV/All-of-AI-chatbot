@@ -305,11 +305,83 @@
                 "patterns": ["when a business need a data engineer", "khi nào cần đến một data engineer", "When to hire a data engineer?"],
                 "response": [" + Scaling your data science team. \n\tWhen your team of data specialists reaches the point when there is nobody to carry technical infrastructure, a data engineer might be a good choice in terms of a general specialist.\n + Big data projects. \n\tCurrently, data engineering shifts towards projects that aim at processing big data, managing data lakes, and building expansive data integration pipelines for noSQL storages. In this case, a dedicated team of data engineers with allocated roles by infrastructure components is optimal. \n + Requiring custom data flows. \n\tEven for medium-sized corporate platforms, there may be the need for custom data engineering. Extract, Transform, Load is just one of the main principles applied mostly to automated BI platforms. In practice, a company might leverage different types of storages and processes for multiple data types. This involves a large technological infrastructure that can be architected and managed only by a diverse data specialist. A data engineer in this case is much more suitable than any other role in the data domain."]
             },
-            # https://www.altexsoft.com/blog/what-is-data-engineer-role-skills/
+            
             {
                 "tag": "warehouse_lake_mart",
-                "patterns": ["Data Ware-house", ""],
+                "patterns": ["Data Warehouse", "data lake", "data mart", "what is difference between data ware house, data lake and data mart"],
                 "response": [""]
-            }
+            },
+
+            {
+                "tag": "EC2",
+                "patterns": ["Elastic computing"],
+                "response": []
+            },
+
+            {
+                "tag": "S3",
+                "patterns": ["S3 bucket"],
+                "response": []
+            },
+
+            {
+                "tag": "Cloud_engineer",
+                "patterns": ["how to become a cloud engineer", "what is the mission and vision of a cloud engineer"],
+                "response": []
+            },
+
+            {
+                "tag": "Cloud_architect",
+                "patterns": ["what is cloud architect"],
+                "response": []
+            },
+
+            {
+                "tag": "Cloud_tools",
+                "patterns": ["which tools is used in cloud"],
+                "response": []
+            },
+            
+            {
+                "tag": "project_manager",
+                "patterns": [],
+                "response": []
+            },
+
+            {
+                "tag": "direct_manager",
+                "patterns": [],
+                "response": []
+            },
+
+            {
+                "tag": "developer",
+                "patterns": [],
+                "response": []
+            },
+
+            {
+                "tag": "web_designers",
+                "patterns": [],
+                "response": []
+            },
+            
+            {
+                "tag": "MLOps",
+                "patterns": [],
+                "response": []
+            },
+
+            {
+                "tag": "pre-sales",
+                "patterns": [],
+                "response": []
+            },
+
+            {
+                "tag": "sys_operation",
+                "patterns": [],
+                "response": []
+            }            
         ]
 }
