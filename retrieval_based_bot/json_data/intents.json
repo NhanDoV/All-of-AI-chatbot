@@ -309,7 +309,7 @@
             {
                 "tag": "data_lake_def",
                 "patterns": ["data lake", "what is data lake"],
-                "response": [""]
+                "response": ["A data lake is a central repository for raw data and unstructured data. You can store data first and process it later on. \n\t - Types of data: all types (Structured data, semi-structured data, unstructured (raw) data). \n\t - Used open-format while Data-Warehouse use a closed-proprietary format. \n\t - Scales to hold any amount of data at low cost, regardless of type \n\t - Limited to Data scientists, poor performance \n\t - Reliability: Low quality, data swamp \n\t - Difficult: Exploring large amounts of raw data can be difficult without tools to organize and catalog the data."]
             },
 
             {
@@ -322,24 +322,24 @@
             {
                 "tag": "data_mart_def",
                 "patterns": ["data mart", "what is dataMart"],
-                "response": [""]
+                "response": [" A data mart is a data storage system that contains information specific to an organization's business unit. It contains a small and selected part of the data that the company stores in a larger storage system. Companies use a data mart to analyze department-specific information more efficiently. It provides summarized data that key stakeholders can use to quickly make informed decisions. \n Why important? \n\t - Retrieve data more efficiently \n\t - Streamline decision-making \n\t - Control information more effectively \n\t - Manage data flexibly \n Types: Dependent - Independent - Hybrid \n Structures: Star - Denormalized"]
             },
 
             {
                 "tag": "data_lake_WH_diff",
-                "patterns": ["difference betweem data lake and data warehouse", "DataLake vs Data Warehouse comparison?"],
+                "patterns": ["difference between data lake and data warehouse", "DataLake vs Data Warehouse comparison?"],
                 "response": [""]
             },
 
             {
                 "tag": "data_mart_WH_diff",
-                "patterns": ["difference betweem data mart and data warehouse", "DataMart vs Data Warehouse comparison?"],
+                "patterns": ["difference between data mart and data warehouse", "DataMart vs Data Warehouse comparison?"],
                 "response": [""]
             },
 
             {
                 "tag": "data_mart_WH_lake_sims",
-                "patterns": ["similarities betweem data mart, data lake and data warehouse", "DataMart, DataLake và Data Warehouse giống nhau ở điểm nào?"],
+                "patterns": ["similarities between data mart, data lake and data warehouse", "DataMart, DataLake và Data Warehouse giống nhau ở điểm nào?"],
                 "response": [""]
             },
 
