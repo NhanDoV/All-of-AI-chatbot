@@ -1,3 +1,5 @@
+print("XBot has been stared to launch ..... \nImporting libraries")
+
 import random, logging
 import pickle, os, time
 t0 = time.time()
@@ -26,12 +28,18 @@ print("current file-path", current_fpath)
 data_folder = '/'.join(current_fpath.split('/')[:-1]) # r"/workspaces/AI_chatbot_flask"
 print(f"file in this directory: {os.listdir(data_folder)}")
 
+print("Loading model parameters")
 model = load_model(f"{data_folder}/models/chatbot_model.h5")
+gpt_model = pipeline("text-generation", model = "gpt2")
+trans_model = pipeline("text2text-generation", model = "t5-small")
+
+print("Loading word_vocalbularies parameters")
 intents = json.loads(open(f"{data_folder}/json_data/intents.json", encoding='utf-8').read())
 words = pickle.load(open(f"{data_folder}/models/words.pkl", "rb"))
 classes = pickle.load(open(f"{data_folder}/models/classes.pkl", "rb"))
 data_file = open(f"{data_folder}/json_data/intents.json", encoding='utf-8').read()
 intents = json.loads(data_file)
+print("Everything has been almostly completed")
 
 # chat functionalities
 def clean_up_sentence(sentence):
@@ -83,48 +91,55 @@ def rounding_text_hour(text):
     
 print(f"XBot has been launched after {int(time.time() - t0)} seconds, thank you for your patience")
 print(f"{100*'*'}\n This is XBot, nice to meet you and please tell me something to talk")
+
+from datetime import date, datetime, timedelta
+import time
+
 while True:
     print(100*"=")
     init_sentence = input("You: ")
-    t1 = time.time()
+    t1 = time.time()    
     sentence = rounding_text_hour(init_sentence)
     if sentence == "quit":
         break
-    p = bow(sentence, words, show_details=False)
-    res = model.predict(np.array([p]))[0]
-    ERROR_THRESHOLD = 0.6
-    results = [[i, r] for i, r in enumerate(res) if r > ERROR_THRESHOLD]
-    # sort by strength of probability
-    results.sort(key=lambda x: x[1], reverse=True)
-    return_list = []
-    for r in results:
-        return_list.append({"intent": classes[r[0]], "probability": str(r[1])})
-    ints = return_list
-    print(ints)
+    elif ('translate' in sentence.split()[:3]) or ('Germany' in sentence.split()) or ('France' in sentence.split()):        
+        print("BOT:")
+        print(trans_model(sentence)['generated_text'])
+    else:        
+        p = bow(sentence, words, show_details=False)
+        res = model.predict(np.array([p]))[0]
+        ERROR_THRESHOLD = 0.6
+        results = [[i, r] for i, r in enumerate(res) if r > ERROR_THRESHOLD]
+        # sort by strength of probability
+        results.sort(key=lambda x: x[1], reverse=True)
+        return_list = []
+        for r in results:
+            return_list.append({"intent": classes[r[0]], "probability": str(r[1])})
+        ints = return_list
+        print(ints)
 
-    if len(return_list) > 0:
-        tag = ints[0]["intent"]
-        list_of_intents = intents["intents"]
+        if len(return_list) > 0:
+            tag = ints[0]["intent"]
+            list_of_intents = intents["intents"]
 
-        for i in list_of_intents:
-            if i["tag"] == tag:
-                print(f"Tag: {tag} \n {100*'.'}")
-                result = random.choice(i["response"])
-                print(f"BOT: Hi\n{result}")
-                if i["tag"] == "daytime_today":
-                    today_date = (datetime.now()).strftime('%b-%d, %Y \t %H:%M:%S GMT+07')
-                    print(f"\tToday is {today_date }")
-    else: 
-        res_sentence = gpt_model(
-                                init_sentence, 
-                                do_sample=True, top_k=3, 
-                                temperature=0.9, max_length=120,
-                                pad_token_id=gpt_model.tokenizer.eos_token_id
-                                )
-        res_sentence = res_sentence[0]["generated_text"]
-        final_responses = list(set(res_sentence.replace('\n\n','\n').split('\n')[1:]))
-        final_responses = [res.replace("\'", "`") for res in final_responses]
-        if len(final_responses) > 0:
-            print(f"[{int(time.time() - t1)} secs] {''.join(final_responses)} \nNếu bạn chưa hài lòng với câu trả lời, xin giải thích rõ ràng hơn vì có thể bot không hiểu hoặc chưa được học!")
-        else:
-            print(f"[{int(time.time() - t1)} secs] Please use English instead, sorry for this inconvenience!!")
+            for i in list_of_intents:
+                if i["tag"] == tag:
+                    print(f"Tag: {tag} \n {100*'.'}")
+                    result = random.choice(i["response"])
+                    print(f"BOT: Hi\n{result}")
+                    if i["tag"] == "daytime_today":
+                        today_date = (datetime.now()).strftime('%b-%d, %Y \t %H:%M:%S GMT+07')
+                        print(f"\tToday is {today_date }")
+        else: 
+            res_sentence = gpt_model(
+                                    init_sentence, 
+                                    do_sample=True, top_k=3, 
+                                    temperature=0.9, max_length=120,
+                                    pad_token_id=gpt_model.tokenizer.eos_token_id
+                                    )
+            res_sentence = res_sentence[0]["generated_text"]
+            final_responses = res_sentence.replace('\n\n','\n').split('\n')[1:] 
+            if len(final_responses) > 0:
+                print(f"[{int(time.time() - t1)} secs] {np.random.choice(final_responses)} \nNếu bạn chưa hài lòng với câu trả lời, xin giải thích rõ ràng hơn vì có thể bot không hiểu hoặc chưa được học!")
+            else:
+                print(f"[{int(time.time() - t1)} secs] Please use English instead, sorry for this inconvenience!!")
