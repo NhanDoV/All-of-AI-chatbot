@@ -328,19 +328,19 @@
             {
                 "tag": "data_lake_WH_diff",
                 "patterns": ["difference between data lake and data warehouse", "DataLake vs Data Warehouse comparison?"],
-                "response": [""]
+                "response": ["- @ A data warehouse and a data lake are two related but fundamentally different technologies. \n - @ While data warehouses store structured data, a lake is a centralized repository that allows you to store any data at any scale. A data lake offers more storage options, has more complexity, and has different use cases compared to a data warehouse. Key points of difference are given below: \n - Data: \n\t * (Data Warehouse) Relational data from transactional systems, operational databases, and line of business applications \n\t * (Data Lake) All data, including structured, semi-structured, and unstructured\n - Schema: \n\t * (Data Warehouse) Often designed prior to the data warehouse implementation but also can be written at the time of analysis. (schema-on-write or schema-on-read) \n\t * (Data Lake) Written at the time of analysis (schema-on-read)\n - Price/Performance: \n\t * (Data Warehouse) Fastest query results using local storage \n\t * (Data Lake) Query results getting faster using low-cost storage and decoupling of compute and storage\n - Data quality: \n\t * (Data Warehouse) Highly curated data that serves as the central version of the truth \n\t * (Data Lake) Any data that may or may not be curated (i.e. raw data)\n - Users : \n\t * (Data Warehouse) Business analysts, data scientists, and data developers \n\t * (Data Lake) Business analysts (using curated data), data scientists, data developers, data engineers, and data architects\n - Analytics: \n\t * (Data Warehouse) Batch reporting, BI, and visualizations \n\t * (Data Lake) Machine learning, exploratory analytics, data discovery, streaming, operational analytics, big data, and profiling"]
             },
 
             {
                 "tag": "data_mart_WH_diff",
                 "patterns": ["difference between data mart and data warehouse", "DataMart vs Data Warehouse comparison?"],
-                "response": [""]
+                "response": [" @ A data warehouse is a relational database that stores data from transactional systems and business function applications. All data in the warehouse is structured or pre-modeled into tables. The data structure and schema are designed to optimize for fast SQL queries.\n @ A data mart is a different marketing term for the same technology. It is also a relational database, but practical usage differs greatly from that of a data warehouse. Key points of difference are given below.\n- Scope: \n\t* (Data Warehouse) Centralized, multiple subject areas integrated together \n\t* (Data Mart) Decentralized, specific subject area \n- Users: \n\t* (Data Warehouse) Organization-wide \n\t* (Data Mart) A single community or department \n- Data source: \n\t* (Data Warehouse) Many sources \n\t* (Data Mart) A single or a few sources, or a portion of data already collected in a data warehouse \n- Size: \n\t* (Data Warehouse) Large, can be 100's of gigabytes to petabytes \n\t* (Data Mart) Small, generally up to 10's of gigabytes\n- Design: : \n\t* (Data Warehouse) Top-down \n\t* (Data Mart) Bottom-up\n- Data detail: \n\t* (Data Warehouse) Complete, detailed data \n\t* (Data Mart) May hold summarized data"]
             },
 
             {
                 "tag": "data_mart_WH_lake_sims",
                 "patterns": ["similarities between data mart, data lake and data warehouse", "DataMart, DataLake và Data Warehouse giống nhau ở điểm nào?"],
-                "response": [""]
+                "response": [" Organizations today have access to ever-increasing volumes of data. However, they must sort, process, filter, and analyze the raw data to derive practical benefits. \n At the same time, they also have to follow rigid data protection and security practices for regulatory compliance. For example, here are practices organizations must follow:\n\t - Collect data from different sources like applications, vendors, Internet of Things (IoT) sensors, and other third parties.\n\t - Process data into a consistent, trustworthy, and useful format. For example, organizations could process data to make sure all dates in the system are in a common format or summarize daily reports.\n\t - Prepare the data by formatting XML files for machine learning software or generating reports for humans. \n Organizations use various tools and solutions to achieve their data analytics outcomes. Data warehouses, marts, and lakes are all solutions that help with storing data."]
             },
 
             {
@@ -350,9 +350,15 @@
             },
 
             {
+                "tag": "Redshift warehouse",
+                "patterns": ["Amazon Redshift for warehousing"],
+                "response": ["Amazon Redshift uses SQL to analyze structured and semi-structured data across data warehouses, operational databases, and data lakes, using AWS-designed hardware and machine learning to deliver the best price performance at any scale. \n Use Amazon Redshift for your data warehousing and data mart requirements. Get integrated insights by running real-time and predictive analytics on complex, scaled data across your operational databases, data lake, data warehouse, and thousands of third-party datasets. You can automatically create, train, and deploy machine learning models with ease."]
+            },        
+        
+            {
                 "tag": "S3",
-                "patterns": ["S3 bucket"],
-                "response": []
+                "patterns": ["S3 bucket", "S3 to build a data lake"],
+                "response": ["Amazon Simple Storage Service (Amazon S3) is an object storage service offering industry-leading scalability, data availability, security, and performance. Customers of all sizes and industries can store and protect any amount of data for virtually any use case, such as data lakes, cloud-native applications, and mobile apps. With cost-effective storage classes and easy-to-use management features, you can optimize costs, organize data, and configure fine-tuned access controls to meet specific business, organizational, and compliance requirements. \n\t- Build a data lake: build a custom data lake for big data analytics, artificial intelligence, machine learning, and high-performance computing applications, Run big data analytics, artificial intelligence (AI), machine learning (ML), and high performance computing (HPC) applications to unlock data insights.. \n\t- Back up and restore critical data: Meet Recovery Time Objectives (RTO), Recovery Point Objectives (RPO), and compliance requirements with S3’s robust replication features. \n\t- Archive data at the lowest cost: Move data archives to the Amazon S3 Glacier storage classes to lower costs, eliminate operational complexities, and gain new insights. \n\t- Run cloud-native applications: Build fast, powerful mobile and web-based cloud-native apps that scale automatically in a highly available configuration."]
             },
 
             {
