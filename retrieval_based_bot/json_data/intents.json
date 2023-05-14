@@ -361,9 +361,21 @@
             },
 
             {
-                  "tag": "oracle_def",
-                  "patterns": ["what is oracle"],
-                  "response": ["Oracle is a slightly more traditional database management system that began with relational RDBMS technologies and was improvised with object-relational and multi-model databases. From the past few years, Oracle has shifted its offerings to the Cloud to leverage the benefits of cloud technology. It also presented some of the modern SAAS offerings such as ERPs/CRMs/SCMs/IoT on the Cloud."]
+                 "tag": "oracle_def",
+                 "patterns": ["what is oracle"],
+                 "response": ["Oracle is a slightly more traditional database management system that began with relational RDBMS technologies and was improvised with object-relational and multi-model databases. From the past few years, Oracle has shifted its offerings to the Cloud to leverage the benefits of cloud technology. It also presented some of the modern SAAS offerings such as ERPs/CRMs/SCMs/IoT on the Cloud."]
+            },
+
+            {
+                "tag": "snowflake_def",
+                "patterns" : ["What is snowflake"],
+                "response" : ["Snowflake is a cloud-based Software-as-a-service(SAAS) solution which allows data storage, preprocessing and analysis. It provides an all-in-one software package to support data collection from a variety of sources as well as storage, processing and analysis solutions. Snowflake does not employ any past or existing database technology. Still, its architecture, as well as query engines, are designed from the beginning, specifically to fit the public cloud infrastructure behind it. "]
+            },
+            
+            {
+                "tag": "databrick_def",
+                "patterns" : ["what is databrick"],
+                "response": ["is a cloud-based platform that provides a unified analytics workspace for big data processing, machine learning, and AI applications. It is built on top of the popular Apache Spark framework, enabling users to scale their data processing and analysis tasks efficiently."]
             },
         
             {
